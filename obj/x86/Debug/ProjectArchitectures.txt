@@ -1,0 +1,1 @@
+D:\EISNT\Programming\asp net MVC\UWP\App3\Forecast_Condition.csproj;x86
