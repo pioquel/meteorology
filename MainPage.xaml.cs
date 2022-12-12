@@ -69,50 +69,53 @@ namespace App3
 
         public async void TempConverterCities()
         {
-            string src = "https://api.previmeteo.com/4c217b99cd7343a71eebc29596429364/ig/api?weather=" + this.Cities.SelectedItem;
-            //Service Access
-
-            WebRequest request = WebRequest.Create(src);
-            WebResponse response = await request.GetResponseAsync();
-            XDocument doc = XDocument.Load(response.GetResponseStream());
-
-            //Obtain current temperature
-            foreach (XElement element in doc.Elements().Descendants("temp_c"))
-            {                
-                if ((bool)this.Fahrenheit.IsChecked)
-                {
-                    var fah = TempCelstoFah(int.Parse(element.Attribute("data").Value));
-                    TextBlockWeather.Text = "Now: " + fah + "°F";
-                } 
-                else                    
-                    TextBlockWeather.Text = "Now: " + element.Attribute("data").Value + "°C";                
-            }
-
-            //Obtain forecast conditions
-            int idx = 0;
-            foreach (XElement element in doc.Elements().Descendants("forecast_conditions"))
+            if (this.Cities.SelectedItem != null)
             {
-                var value = "";
-                int fahMax = int.Parse(element.Descendants("high").First().Attribute("data").Value);
-                int fahMin = int.Parse(element.Descendants("low").First().Attribute("data").Value);
-                var celsMax = TempFahtoCels(fahMax);
-                var celsMin = TempFahtoCels(fahMin);
-                if ((bool)this.Fahrenheit.IsChecked)
-                    value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + fahMax + "°F - Min " + fahMin + "°F";
-                else
-                    value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + celsMax + "°C - Min " + celsMin + "°C";
-                if (idx == 0)
-                    TextBlockWeather1.Text = value;
-                if (idx == 1)
-                    TextBlockWeather2.Text = value;
-                if (idx == 2)
-                    TextBlockWeather3.Text = value;
-                if (idx == 3)
-                    TextBlockWeather4.Text = value;
+                string src = "https://api.previmeteo.com/4c217b99cd7343a71eebc29596429364/ig/api?weather=" + this.Cities.SelectedItem;
+                //Service Access
 
-                idx++;
-            }
+                WebRequest request = WebRequest.Create(src);
+                WebResponse response = await request.GetResponseAsync();
+                XDocument doc = XDocument.Load(response.GetResponseStream());
+
+                //Obtain current temperature
             
+                foreach (XElement element in doc.Elements().Descendants("temp_c"))
+                {
+                    if ((bool)this.Fahrenheit.IsChecked)
+                    {
+                        var fah = TempCelstoFah(int.Parse(element.Attribute("data").Value));
+                        TextBlockWeather.Text = "Now: " + fah + "°F";
+                    }
+                    else
+                        TextBlockWeather.Text = "Now: " + element.Attribute("data").Value + "°C";
+                }
+
+                //Obtain forecast conditions
+                int idx = 0;
+                foreach (XElement element in doc.Elements().Descendants("forecast_conditions"))
+                {
+                    var value = "";
+                    int fahMax = int.Parse(element.Descendants("high").First().Attribute("data").Value);
+                    int fahMin = int.Parse(element.Descendants("low").First().Attribute("data").Value);
+                    var celsMax = TempFahtoCels(fahMax);
+                    var celsMin = TempFahtoCels(fahMin);
+                    if ((bool)this.Fahrenheit.IsChecked)
+                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + fahMax + "°F - Min " + fahMin + "°F";
+                    else
+                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + celsMax + "°C - Min " + celsMin + "°C";
+                    if (idx == 0)
+                        TextBlockWeather1.Text = value;
+                    if (idx == 1)
+                        TextBlockWeather2.Text = value;
+                    if (idx == 2)
+                        TextBlockWeather3.Text = value;
+                    if (idx == 3)
+                        TextBlockWeather4.Text = value;
+
+                    idx++;
+                }
+            }                        
         }
 
         private async void Cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
