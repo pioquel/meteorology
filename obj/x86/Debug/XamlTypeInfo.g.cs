@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace App3
+namespace ForecastCondition
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {

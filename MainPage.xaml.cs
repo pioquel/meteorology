@@ -82,6 +82,7 @@ namespace ForecastCondition
             
                 foreach (XElement element in doc.Elements().Descendants("temp_c"))
                 {
+                    
                     if ((bool)this.Fahrenheit.IsChecked)
                     {
                         var fah = TempCelstoFah(int.Parse(element.Attribute("data").Value));
@@ -101,9 +102,9 @@ namespace ForecastCondition
                     var celsMax = TempFahtoCels(fahMax);
                     var celsMin = TempFahtoCels(fahMin);
                     if ((bool)this.Fahrenheit.IsChecked)
-                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + fahMax + "°F - Min " + fahMin + "°F";
+                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + fahMax + "°F - Min " + fahMin + "°F - " + element.Descendants("condition").First().Attribute("data").Value;
                     else
-                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + celsMax + "°C - Min " + celsMin + "°C";
+                        value = element.Descendants("day_of_week").First().Attribute("data").Value + " - Max " + celsMax + "°C - Min " + celsMin + "°C - " + element.Descendants("condition").First().Attribute("data").Value;
                     if (idx == 0)
                         TextBlockWeather1.Text = value;
                     if (idx == 1)

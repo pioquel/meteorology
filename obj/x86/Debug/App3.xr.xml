@@ -76,6 +76,6 @@
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="App3.MainPage" />
+    <RootType FullName="ForecastCondition.MainPage" />
   </Roots.RootTypes>
 </Roots>
