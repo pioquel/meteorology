@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\Forecast_Condition.csproj": {}
+    "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\Forecast_Condition.csproj": {}
   },
   "projects": {
-    "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\Forecast_Condition.csproj": {
+    "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\Forecast_Condition.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\Forecast_Condition.csproj",
+        "projectUniqueName": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\Forecast_Condition.csproj",
         "projectName": "App3",
-        "projectPath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\Forecast_Condition.csproj",
+        "projectPath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\Forecast_Condition.csproj",
         "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\obj\\",
+        "outputPath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

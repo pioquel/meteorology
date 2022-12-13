@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GJn6kMyMycWdkyyvytf6H3u19pZpvyjo8HAw3tafW2AWCfV2uOqgQp2uHV8fAaiD5SqZKyZkQalK3Bq+0v2EMw==",
+  "dgSpecHash": "X4q7YV1s67zBsQPxQkFfYD/cziPKUo8cnBzlC1kOSk0k+wsAgrkGQaMUryi048Az2rlHGDetkwMPph96E+zT1Q==",
   "success": true,
-  "projectFilePath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\App3\\Forecast_Condition.csproj",
+  "projectFilePath": "D:\\EISNT\\Programming\\asp net MVC\\UWP\\forecast_condition\\meteorology\\Forecast_Condition.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.12-rel-31116-00\\microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.14\\microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
